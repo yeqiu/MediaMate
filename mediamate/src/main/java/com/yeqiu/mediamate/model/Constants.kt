@@ -8,6 +8,6 @@ internal object Constants {
     const val mediaType = "mediaType"
     const val maxSize = "maxSize"
     const val cacheDirName = "mediaMate"
-    const val fileProvider = "com.yeqiu.mediamate.fileprovider"
+     val fileProvider = ".mediamate.fileprovider"
 
 }

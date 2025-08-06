@@ -45,8 +45,9 @@ internal class CameraCaptureViewModel(application: Application) : AndroidViewMod
         val dir = File(context.cacheDir, "capture_temp").apply { mkdirs() }
         outputFile = File(dir, fileName)
 
+        val authority = "${context.packageName}${Constants.fileProvider}"
         outputUri = FileProvider.getUriForFile(
-            context, Constants.fileProvider,
+            context, authority,
             outputFile
         )
 

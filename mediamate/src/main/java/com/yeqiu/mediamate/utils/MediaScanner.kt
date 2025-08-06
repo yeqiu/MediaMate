@@ -15,7 +15,7 @@ import kotlinx.coroutines.withContext
 object MediaScanner {
 
     /**
-     * 同时扫描媒体文件和文件夹，权限不足时逐步触发权限申请回调。
+     * 同时扫描媒体文件和文件夹
      */
     suspend fun scanMediaData(
         context: Context,

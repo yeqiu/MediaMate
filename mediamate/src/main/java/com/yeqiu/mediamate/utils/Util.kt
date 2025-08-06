@@ -33,9 +33,3 @@ internal object Util {
 
 }
 
-
-
-fun logInfo(log:String){
-
-    Log.i("ValkyrieLog", "ValkyrieLog.logInfo: $log")
-}

@@ -11,7 +11,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.yeqiu.mediamate.MediaMateManager
 import com.yeqiu.mediamate.model.MediaActionType
-import com.yeqiu.mediamate.utils.logInfo
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,12 +45,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tv_take_image).setOnClickListener {
 
             MediaMateManager.take(this, MediaActionType.TAKE_IMAGE) {
-
-
-                logInfo("TAKE_IMAGE")
-
                 tvResult.text = ""
-
                 tvResult.append("文件名 = ${it.displayName} , 路径=${it.finalPath}")
                 tvResult.append("\n")
                 tvResult.append("\n")
@@ -99,17 +93,12 @@ class MainActivity : AppCompatActivity() {
 
         tvResult.text = ""
 
-
-
         MediaMateManager.select(this, MediaActionType.SELECT_ALL, 6) {
-
             it.forEach {
                 tvResult.append("文件名 = ${it.displayName} , 路径=${it.finalPath}")
                 tvResult.append("\n")
                 tvResult.append("\n")
-
             }
-
         }
 
     }

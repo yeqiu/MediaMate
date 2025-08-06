@@ -131,10 +131,8 @@ internal class MediaSelectFragment private constructor() : Fragment() {
         }
 
         viewModel.resultList.observe(viewLifecycleOwner) {
-            if (it.isNotEmpty()) {
-                viewModel.clearResult()
-            }
             MediaMateManager.onSelectResult(it)
+
             onBackPressed()
         }
 
