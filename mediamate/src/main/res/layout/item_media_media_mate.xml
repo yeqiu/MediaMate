@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ItemMediaBinding">
+
+        <variable
+            name="item"
+            type="com.yeqiu.mediamate.model.MediaItemSelect" />
+
+        <variable
+            name="onClickListener"
+            type="com.yeqiu.mediamate.ui.MediaAdapter" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100"
+        android:onClick="@{()->onClickListener.clickSelect(item)}"
+        android:orientation="vertical"
+        tools:background="@color/black">
+
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            tools:src="@drawable/icon_media_samples_media_mate" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_gravity="right|top"
+            android:layout_margin="@dimen/dp_10"
+            android:src="@{item.isSelect?@drawable/icon_select_media_mate:@drawable/icon_unselect_media_mate}"
+            tools:src="@drawable/icon_unselect_media_mate" />
+
+    </FrameLayout>
+</layout>

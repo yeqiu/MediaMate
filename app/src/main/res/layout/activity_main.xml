@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dp_16"
+    tools:context="com.yeqiu.mediamatedemo.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="选择图片/视频"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/tv_take_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="拍照"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/tv_take_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="录像"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_text"
+        tools:text="这是一段文本这是一段文本这是一段文本这是一段文本这是一段文本" />
+
+
+</LinearLayout>
