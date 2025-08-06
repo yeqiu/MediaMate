@@ -22,7 +22,7 @@ todo:待上传
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 ```
 
-调用这根据选择的类型申请对应的权限，无权限调用会抛出异常，库内部会提示缺失的权限
+调用前根据选择的类型申请对应的权限，无权限调用会抛出异常，库内部会提示缺失的权限
 
 
 
@@ -51,17 +51,11 @@ data class MediaItem(
     val folderId: String,
     //所在的目录名称
     val folderName: String,
-    // 视频时长（单位毫秒）
+    // 视频时长（单位毫秒）选择图片时本字段为0
     val duration: Long = 0L,
     //最终路径，file的绝对路径
     val finalPath: String = ""
-) : Serializable{
-
-    fun isVideo():Boolean{
-        return mimeType.startsWith("video/")
-    }
-}
-
+)
 ```
 
 
@@ -136,8 +130,24 @@ com.yeqiu.mediamate.utils.MediaScanner 提供扫描图片，视频以及所在�
 
 
 
+### 使用到其他库
+
+~~~kotlin
+    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.10.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.activity:activity-ktx:1.7.2")
+    implementation("androidx.fragment:fragment-ktx:1.7.1")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("top.zibin:Luban:1.1.8")
+~~~
 
 
-## 📄 License
+
+
+
+### 📄 License
 
 MIT License © 2025 YeQiu
