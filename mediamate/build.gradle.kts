@@ -2,6 +2,8 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    // 发布到 Maven
+    id("maven-publish")
 }
 
 android {
@@ -38,7 +40,6 @@ android {
 }
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
@@ -48,6 +49,24 @@ dependencies {
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("top.zibin:Luban:1.1.8")
+}
 
-
+/**
+ *  JitPack 发布配置
+ * - JitPack 构建时会执行 `publish` 任务
+ * - groupId 必须是 com.github.<GitHub用户名>
+ * - artifactId 建议和模块名一致（mediamate）
+ * - version 要和 GitHub tag 一致
+ */
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            afterEvaluate {
+                from(components["release"])
+            }
+            groupId = "com.github.yeqiu"
+            artifactId = "mediamate"
+            version = "1.0.0"
+        }
+    }
 }
