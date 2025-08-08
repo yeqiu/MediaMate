@@ -4,7 +4,9 @@
 
 ## 🚀 快速接入
 
-todo:待上传
+```kotlin
+implementation 'com.github.yeqiu:MediaMate:1.0.0'
+```
 
 
 ### MediaMate
