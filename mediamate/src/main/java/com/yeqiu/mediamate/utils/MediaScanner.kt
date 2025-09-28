@@ -96,11 +96,11 @@ private fun loadImages(context: Context): List<MediaItem> {
             images.add(
                 MediaItem(
                     uri = uri,
-                    mimeType = cursor.getString(mimeCol),
-                    displayName = cursor.getString(nameCol),
-                    dateAdded = cursor.getLong(dateCol),
-                    folderId = cursor.getString(folderIdCol),
-                    folderName = cursor.getString(folderNameCol),
+                    mimeType = cursor.getString(mimeCol)?:"",
+                    displayName = cursor.getString(nameCol)?:"",
+                    dateAdded = cursor.getLong(dateCol)?:0,
+                    folderId = cursor.getString(folderIdCol)?:"0",
+                    folderName = cursor.getString(folderNameCol)?:"",
                     duration = 0L
                 )
             )
