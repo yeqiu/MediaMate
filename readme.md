@@ -5,7 +5,7 @@
 ## 🚀 快速接入
 
 ```kotlin
-implementation 'com.github.yeqiu:MediaMate:1.0.0'
+implementation 'com.github.yeqiu:MediaMate:1.0.1'
 ```
 
 
